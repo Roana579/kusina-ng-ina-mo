@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="About page of Your Website" />
+  <title>About</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    section { margin-bottom: 24px; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Kusina ng ina mo</h1>
+    <nav aria-label="Main navigation">
+       <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="favorites.html">Favorites</a></li>
+        <li><a href="about.html" aria-current="page">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <header>
+      <h2>About Us</h2>
+      <p>Our story, mission, and values.</p>
+    </header>
+
+    <section>
+      <h3 style="text-align: center;">Who We Are</h3>
+      <p style="text-align: center;">We are here as your guide in kitchen, to make you learn about cooking and about your dishes</p>
+    </section>
+
+    <section>
+      <h3 style="text-align: center;">Our Mission</h3>
+      <p style="text-align: center;">Our goal is to teach everyone to cook for their love ones</p>
+    </section>
+
+    <section>
+      <h3 style="text-align: center;">Timeline</h3>
+      <ul>
+        <li style="text-align: center;"><strong>2025:</strong> Project started</li>
+        <li style="text-align: center;"><strong>2026:</strong> Reached key milestone</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>© <span id="year"></span> Kusina ng ina mo. All rights reserved.</p>
+  </footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
+``

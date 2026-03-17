@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Services page of Your Website" />
+  <title>Services</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .grid { display:grid; gap:16px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+    .card { border:1px solid #eee; border-radius:8px; padding:16px; background:#fff; }
+    .card a { display:inline-block; margin-top:8px; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Kusina ng ina mo</h1>
+    <nav aria-label="Main navigation">
+      <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="favorites.html">Favorites</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html" aria-current="page">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <header>
+      <h2>Our Services</h2>
+      <p>We have services below that will help you make your own dish:</p>
+    </header>
+
+    <section aria-label="Service list" class="grid">
+      <article class="card">
+        <h3>Cooking Tutorial</h3>
+        <p>We will give you some videos about the process of cooking and give you some ideas for your dish</p>
+        <a href="contact.html">Inquire →</a>
+      </article>
+      <article class="card">
+        <h3>Recipes</h3>
+        <p>We will give you some ingredients that will help you make your favorite dish</p>
+        <a href="contact.html">Inquire →</a>
+      </article>
+      <article class="card">
+        <h3>Advices about the ingredients</h3>
+        <p>We will give you some advice like if you want to add more ingredients to your dishes or you want to learn more abbout cooking, were here</p>
+        <a href="contact.html">Inquire →</a>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <p>© <span id="year"></span> Kusina ng ina mo. All rights reserved.</p>
+  </footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Kitchen Recipes</title>
+<link rel="stylesheet" href="style.css">
+<header>
+    <h1>Kusina ng ina mo</h1>
+    <nav aria-label="Main navigation">
+      <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="favorites.html" aria-current="page">Favorites</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        
+      </ul>
+    </nav>
+  </header>
+<style>
+    .hero { background:#f3fff7; padding:24px; border:1px solid #d8f5e5; border-radius:8px; }
+    .grid { display:grid; gap:16px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); margin-top:16px; }
+    .card { border:1px solid #eee; border-radius:8px; padding:16px; background:#fff; }
+    #favorites {
+        margin-top: 30px;
+        padding: 15px;
+        background: #fff3cd;
+        border-radius: 10px;
+    }
+</style>
+</head>
+
+<body>
+
+<h1 style="color: #f3fff7;">🍳 Kitchen Recipes</h1>
+
+<!-- Recipes -->
+<div class="recipe">
+    <h3 style="color: #f3fff7;">Adobo</h3>
+    <p style="color: #f3fff7;">Classic Filipino dish with soy sauce <br>and vinegar.</p>
+    <button onclick="toggleFavorite('Adobo', this)">❤️ Save</button>
+</div>
+
+<div class="recipe">
+    <h3 style="color: #f3fff7;">Sinigang</h3>
+    <p style="color: #f3fff7;">Sour soup with tamarind flavor.</p>
+    <button onclick="toggleFavorite('Sinigang', this)">❤️ Save</button>
+</div>
+
+<div class="recipe">
+    <h3 style="color: #f3fff7;">Spaghetti</h3>
+    <p style="color: #f3fff7;">Sweet Filipino-style spaghetti.</p>
+    <button onclick="toggleFavorite('Spaghetti', this)">❤️ Save</button>
+</div>
+
+<!-- Favorites Section -->
+<div id="favorites">
+    <h2>⭐ My Favorites</h2>
+    <ul id="favoriteList"></ul>
+</div>
+
+<script>
+// Load favorites on page start
+function loadFavorites() {
+    let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+    let list = document.getElementById("favoriteList");
+
+    list.innerHTML = "";
+
+    favorites.forEach(item => {
+        let li = document.createElement("li");
+        li.textContent = item;
+        list.appendChild(li);
+    });
+
+    updateButtons();
+}
+
+// Save / Remove favorite
+function toggleFavorite(recipe, button) {
+    let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+
+    if (favorites.includes(recipe)) {
+        // Remove
+        favorites = favorites.filter(item => item !== recipe);
+    } else {
+        // Add
+        favorites.push(recipe);
+    }
+
+    localStorage.setItem("favorites", JSON.stringify(favorites));
+    loadFavorites();
+}
+
+// Update button style (Saved / Not Saved)
+function updateButtons() {
+    let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+    let buttons = document.querySelectorAll(".recipe button");
+
+    buttons.forEach(btn => {
+        let recipeName = btn.parentElement.querySelector("h3").textContent;
+
+        if (favorites.includes(recipeName)) {
+            btn.textContent = "✅ Saved";
+            btn.classList.add("saved");
+        } else {
+            btn.textContent = "❤️ Save";
+            btn.classList.remove("saved");
+        }
+    });
+}
+
+// Run on load
+loadFavorites();
+</script>
+<footer>
+    <p>© <span id="year"></span> Kusina ng ina mo. All rights reserved.</p>
+  </footer>
+</body>
+</html>

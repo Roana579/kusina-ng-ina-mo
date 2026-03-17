@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Contact page of Your Website" />
+  <title>Contact</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    form { max-width: 560px; margin-top: 16px; }
+    label { font-weight: 600; }
+    input, textarea { width: 100%; padding: 10px; margin: 8px 0 16px; border:1px solid #ccc; border-radius:6px; font: inherit; }
+    button { background:#0b5; border:none; color:#fff; padding:10px 16px; border-radius:6px; cursor:pointer; }
+    button:hover { opacity:.9; }
+    .contact-info { margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Kusina ng ina mo</h1>
+    <nav aria-label="Main navigation">
+       <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="favorites.html">Favorites</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html" aria-current="page">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <header>
+      <h2>Contact Us</h2>
+      <p>Reach out for questions or service requests.</p>
+      <div class="contact-info">
+        <p>Email: g3-241-00746@gma.uphsl.edu.ph</a></p>
+        <p>Phone: 09770736475</a></p>
+      </div>
+    </header>
+
+    <section aria-label="Contact form">
+      <h3 style="color: #f3fff7;">Send a Message</h3>
+        <div>
+          <label for="name" style="color: #f3fff7;">Full Name</label><br />
+          <input type="text" id="name" name="name" required />
+        </div>
+        <div>
+          <label for="email" style="color: #f3fff7;">Email</label><br />
+          <input type="email" id="email" name="email" required />
+        </div>
+        <div>
+          <label for="message">Message</label><br />
+          <textarea id="message" name="message" rows="5" required></textarea>
+        </div>
+        <button type="submit">Send</button>
+      </form>
+      <!-- Note: Backend processing will be added in later weeks -->
+    </section>
+  </main>
+
+  <footer>
+    <p>© <span id="year"></span> Kusina ng ina mo. All rights reserved.</p>
+  </footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

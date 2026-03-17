@@ -1,0 +1,33 @@
+body {
+     font-family: Arial, sans-serif; 
+     line-height: 1.6; 
+     margin: 0;
+     background-image: url(https://images.rawpixel.com/image_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTA5L3Jhd3BpeGVsX29mZmljZV8yOF9iZWF1dGlmdWxfZW1wdHlfYnJvd25fd29vZGVuX3RhYmxlX3RvcF9hbmRfYl84NzNiZDQ3NC02NmY2LTQzMDAtOGFhOS05ZTRjMzNkNzg4ZjlfMS5qcGc.jpg);
+     background-size: cover;
+    }
+header, footer {
+     background:#277487;
+      color:#fff;
+       padding: 16px; 
+       justify-content: center;
+       text-align: center;
+    }
+nav ul {
+     display:flex; 
+     gap:16px;
+     list-style:none; 
+     padding:0; 
+     margin:8px 0 0; 
+     justify-content: center;
+    }
+nav a { 
+    color:#fff; 
+    text-decoration:none; 
+}
+nav a[aria-current="page"] { 
+    text-decoration: underline; 
+    font-weight: 700; 
+}
+main { 
+    padding: 24px; 
+}
